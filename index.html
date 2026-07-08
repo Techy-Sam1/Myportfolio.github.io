@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ifeoluwa Samuel Sunday — Data & Reporting Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07080a;
+  --s1:#0e0f12;
+  --s2:#14161a;
+  --s3:#1e2026;
+  --bd:rgba(255,255,255,0.06);
+  --bd2:rgba(255,255,255,0.14);
+  --txt:#eeeef0;
+  --muted:#6b6e78;
+  --sub:#9a9da8;
+  --acc:#00d4aa;
+  --acc2:#7c6af7;
+  --gold:#f0b429;
+  --nhs:#005EB8;
+  --red:#e05555;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:999;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;background:rgba(7,8,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd)}
+.logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--txt);text-decoration:none;letter-spacing:.01em}
+.logo span{color:var(--acc)}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.8rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--acc)}
+.nav-cta{background:var(--acc)!important;color:#07080a!important;padding:.3rem 1.1rem;border-radius:5px;font-weight:600!important;transition:opacity .2s!important}
+.nav-cta:hover{opacity:.85}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:5rem 3rem 4rem;position:relative;overflow:hidden}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.glow-a{position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,170,.05) 0%,transparent 65%);top:-30%;right:-10%;pointer-events:none}
+.glow-b{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(124,106,247,.04) 0%,transparent 65%);bottom:-15%;left:-8%;pointer-events:none}
+.hero-inner{max-width:1020px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 280px;gap:5rem;align-items:center}
+.status-pill{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:1.8rem;padding:.3rem 1rem;border:1px solid rgba(0,212,170,.2);border-radius:20px;background:rgba(0,212,170,.05)}
+.status-dot{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5.5vw,5rem);font-weight:700;line-height:1.05;margin-bottom:1.5rem;letter-spacing:-.02em}
+h1 em{font-style:italic;color:var(--acc)}
+h1 .line2{color:var(--sub)}
+.hero-desc{font-size:.95rem;color:var(--sub);max-width:520px;margin-bottom:2.8rem;line-height:1.95}
+.btns{display:flex;gap:.85rem;flex-wrap:wrap;margin-bottom:3.5rem}
+.btn-p{background:var(--acc);color:#07080a;padding:.7rem 1.9rem;border-radius:7px;text-decoration:none;font-weight:600;font-size:.85rem;transition:opacity .2s;letter-spacing:.01em}
+.btn-p:hover{opacity:.85}
+.btn-g{border:1px solid var(--bd2);color:var(--sub);padding:.7rem 1.9rem;border-radius:7px;text-decoration:none;font-weight:400;font-size:.85rem;transition:all .2s}
+.btn-g:hover{border-color:rgba(255,255,255,.3);color:var(--txt)}
+.hero-stats{display:flex;gap:2.8rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid var(--bd)}
+.stat .n{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:700;color:var(--txt);display:block;line-height:1}
+.stat .l{font-size:.68rem;color:var(--muted);letter-spacing:.06em;margin-top:.35rem;text-transform:uppercase}
+
+/* ID CARD */
+.id-card{background:var(--s2);border:1px solid var(--bd);border-radius:20px;padding:2rem 1.5rem;display:flex;flex-direction:column;align-items:center;gap:1rem;position:relative;overflow:hidden}
+.id-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--acc),var(--acc2))}
+.avatar-img{width:100px;height:100px;border-radius:50%;object-fit:cover;border:2px solid var(--acc);display:block}
+.avatar-name{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:600;color:var(--txt);text-align:center}
+.avatar-title{font-size:.7rem;color:var(--muted);text-align:center;line-height:1.6}
+.exp-badge{background:rgba(0,212,170,.08);border:1px solid rgba(0,212,170,.2);border-radius:6px;padding:.35rem .8rem;font-size:.68rem;color:var(--acc);font-weight:500;text-align:center;width:100%}
+.avatar-links{display:flex;gap:.5rem;margin-top:.2rem}
+.av-icon{width:34px;height:34px;border-radius:7px;border:1px solid var(--bd);background:var(--s3);display:flex;align-items:center;justify-content:center;font-size:.82rem;text-decoration:none;transition:border-color .2s}
+.av-icon:hover{border-color:var(--acc)}
+
+/* SECTIONS */
+section{padding:6rem 3rem}
+.wrap{max-width:1020px;margin:0 auto}
+.sec-eye{font-size:.65rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);margin-bottom:.5rem}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin-bottom:.85rem;line-height:1.15;letter-spacing:-.01em}
+.sec-desc{color:var(--muted);max-width:520px;margin-bottom:3.5rem;font-size:.9rem;line-height:1.9}
+
+/* EXPERIENCE */
+#experience{background:var(--s1);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+.exp-timeline{display:flex;flex-direction:column;gap:1.5rem}
+.exp-card{background:var(--s2);border:1px solid var(--bd);border-radius:16px;padding:1.8rem 2rem;position:relative;transition:border-color .25s}
+.exp-card:hover{border-color:var(--bd2)}
+.exp-card.current{border-color:rgba(0,212,170,.25);background:linear-gradient(135deg,rgba(0,212,170,.04) 0%,var(--s2) 60%)}
+.exp-card.current::before{content:'CURRENT';position:absolute;top:1.2rem;right:1.5rem;font-size:.6rem;font-weight:600;letter-spacing:.12em;color:var(--acc);background:rgba(0,212,170,.1);padding:.2rem .6rem;border-radius:10px;border:1px solid rgba(0,212,170,.2)}
+.exp-top{display:flex;align-items:flex-start;gap:1.2rem;margin-bottom:1rem}
+.exp-icon{width:42px;height:42px;border-radius:10px;background:var(--s3);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.exp-meta{}
+.exp-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--txt);margin-bottom:.15rem}
+.exp-company{font-size:.8rem;color:var(--acc);font-weight:500}
+.exp-date{font-size:.72rem;color:var(--muted);margin-top:.1rem}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.exp-bullets li{font-size:.85rem;color:var(--sub);padding-left:1.1rem;position:relative;line-height:1.7}
+.exp-bullets li::before{content:'→';position:absolute;left:0;color:var(--acc);font-size:.75rem;top:.05rem}
+.exp-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1rem}
+.etag{font-size:.65rem;padding:2px 9px;border-radius:20px;border:1px solid var(--bd);color:var(--muted);background:var(--s3)}
+
+/* STACK */
+#stack{background:var(--bg)}
+.stack-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem}
+.stack-card{background:var(--s2);border:1px solid var(--bd);border-radius:10px;padding:.9rem 1.1rem;display:flex;align-items:center;gap:.7rem;transition:border-color .2s,transform .2s}
+.stack-card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.s-icon{font-size:1.15rem;flex-shrink:0}
+.s-name{font-size:.83rem;color:var(--txt);font-weight:400}
+.s-sub{font-size:.66rem;color:var(--muted)}
+
+/* PROJECTS */
+#projects{background:var(--s1);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+.proj-list{display:flex;flex-direction:column;gap:2rem}
+.proj-card{background:var(--s2);border:1px solid var(--bd);border-radius:18px;padding:2rem;transition:border-color .25s,transform .25s}
+.proj-card:hover{border-color:var(--bd2);transform:translateY(-2px)}
+.proj-card.featured{border-color:rgba(0,94,184,.35);background:linear-gradient(135deg,rgba(0,94,184,.06) 0%,var(--s2) 55%)}
+.proj-card.featured:hover{border-color:rgba(0,94,184,.6)}
+.feat-pill{display:inline-flex;align-items:center;gap:.4rem;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#60a5fa;margin-bottom:.85rem;padding:.22rem .75rem;border:1px solid rgba(96,165,250,.22);border-radius:20px;background:rgba(96,165,250,.06)}
+.feat-dot{width:5px;height:5px;border-radius:50%;background:#60a5fa;animation:blink 2s infinite}
+.proj-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.25rem}
+.proj-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;color:var(--txt);line-height:1.3}
+.proj-gh{color:var(--acc);text-decoration:none;font-size:.75rem;font-weight:500;white-space:nowrap;opacity:.75;transition:opacity .2s;padding:.22rem .65rem;border:1px solid rgba(0,212,170,.2);border-radius:5px;flex-shrink:0}
+.proj-gh:hover{opacity:1}
+.proj-sub{font-size:.75rem;color:var(--muted);font-style:italic;margin-bottom:.9rem}
+.proj-img-wrap{margin-bottom:1rem;border-radius:10px;overflow:hidden;border:1px solid var(--bd);cursor:zoom-in}
+.proj-img-wrap img{display:block;width:100%;height:auto;transition:transform .35s}
+.proj-img-wrap:hover img{transform:scale(1.02)}
+.proj-img-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1rem}
+.proj-img-grid .proj-img-wrap{margin-bottom:0}
+.nhs-stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:1rem;padding:.85rem;background:rgba(0,94,184,.05);border:1px solid rgba(0,94,184,.15);border-radius:10px}
+.nhs-stat .nv{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--red);display:block;line-height:1}
+.nhs-stat .nl{font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-top:.2rem}
+.proj-desc{font-size:.86rem;color:var(--sub);margin-bottom:1.1rem;line-height:1.85}
+.proj-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1rem}
+.tag{font-size:.65rem;font-weight:500;padding:3px 10px;border-radius:20px;border:1px solid;letter-spacing:.02em}
+.tc{background:rgba(0,212,170,.07);color:#5eead4;border-color:rgba(0,212,170,.2)}
+.tg{background:rgba(124,106,247,.07);color:#a5b4fc;border-color:rgba(124,106,247,.2)}
+.tp{background:rgba(240,180,41,.07);color:#fde68a;border-color:rgba(240,180,41,.2)}
+.tz{background:rgba(107,110,120,.1);color:#9a9da8;border-color:rgba(107,110,120,.2)}
+.tnhs{background:rgba(0,94,184,.1);color:#93c5fd;border-color:rgba(0,94,184,.3)}
+.metrics{display:flex;flex-wrap:wrap;gap:.4rem}
+.metric{background:var(--s3);border:1px solid var(--bd);border-radius:7px;padding:.32rem .8rem;font-size:.73rem;color:var(--sub)}
+.metric strong{color:var(--acc);font-weight:500}
+.metric.nhs-m strong{color:#60a5fa}
+
+/* ABOUT */
+#about{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:260px 1fr;gap:4rem;align-items:start}
+.about-card{background:var(--s2);border:1px solid var(--bd);border-radius:18px;padding:1.8rem;display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center;position:relative;overflow:hidden}
+.about-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--acc2),var(--acc))}
+.about-photo{width:90px;height:90px;border-radius:50%;object-fit:cover;border:2px solid var(--acc)}
+.about-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:var(--txt)}
+.about-role{font-size:.72rem;color:var(--muted);line-height:1.6}
+.about-divider{width:100%;height:1px;background:var(--bd)}
+.soc-link{display:flex;align-items:center;gap:.6rem;color:var(--muted);text-decoration:none;font-size:.76rem;padding:.42rem .7rem;border-radius:7px;border:1px solid var(--bd);transition:all .2s;text-align:left;width:100%}
+.soc-link:hover{border-color:var(--acc);color:var(--acc)}
+.social-row{display:flex;flex-direction:column;gap:.45rem;width:100%}
+.about-text h3{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;margin-bottom:.9rem;line-height:1.25}
+.about-text p{color:var(--sub);font-size:.88rem;margin-bottom:.85rem;line-height:1.9}
+.skills-wrap{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.1rem}
+.skill-tag{font-size:.7rem;color:var(--sub);border:1px solid var(--bd);border-radius:20px;padding:3px 11px;transition:all .2s}
+.skill-tag:hover{border-color:var(--acc);color:var(--acc)}
+
+/* CONTACT */
+#contact{background:var(--s1);border-top:1px solid var(--bd)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
+.contact-info h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin-bottom:.75rem}
+.contact-info p{color:var(--muted);font-size:.87rem;margin-bottom:2rem;line-height:1.9}
+.c-links{display:flex;flex-direction:column;gap:.65rem}
+.c-link{display:flex;align-items:center;gap:.75rem;color:var(--muted);text-decoration:none;font-size:.85rem;transition:color .2s}
+.c-link:hover{color:var(--acc)}
+.c-icon{width:36px;height:36px;background:var(--s2);border:1px solid var(--bd);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.form{display:flex;flex-direction:column;gap:.85rem}
+.fg label{display:block;font-size:.7rem;color:var(--muted);margin-bottom:.3rem;letter-spacing:.06em;text-transform:uppercase}
+.fg input,.fg textarea{width:100%;background:var(--s2);border:1px solid var(--bd);border-radius:8px;color:var(--txt);font-family:'DM Sans',sans-serif;font-size:.86rem;padding:.65rem 1rem;outline:none;transition:border-color .2s;resize:none}
+.fg input:focus,.fg textarea:focus{border-color:var(--acc)}
+.fg textarea{height:110px}
+.form-btn{background:var(--acc);color:#07080a;border:none;border-radius:8px;padding:.7rem 1.8rem;font-family:'DM Sans',sans-serif;font-size:.86rem;font-weight:600;cursor:pointer;align-self:flex-start;transition:opacity .2s}
+.form-btn:hover{opacity:.83}
+
+/* FOOTER */
+footer{text-align:center;padding:2rem 3rem;border-top:1px solid var(--bd);font-size:.74rem;color:var(--muted)}
+footer a{color:var(--acc);text-decoration:none}
+
+/* RESPONSIVE */
+@media(max-width:860px){
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}
+  .id-card{flex-direction:row;width:100%;text-align:left;align-items:center}
+  .about-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .nhs-stat-strip{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  nav{padding:0 1.2rem}
+  .nav-links{gap:1.2rem}
+  .hero,section{padding-left:1.2rem;padding-right:1.2rem}
+  .proj-img-grid{grid-template-columns:1fr}
+  .nhs-stat-strip{grid-template-columns:repeat(2,1fr)}
+  h1{font-size:2.4rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Sam<span>Analytics</span></a>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#stack">Skills</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="grid-bg"></div>
+  <div class="glow-a"></div>
+  <div class="glow-b"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="status-pill"><span class="status-dot"></span>Available for opportunities</div>
+      <h1>Data Analyst.<br><em>Reporting Analyst.</em><br><span class="line2">Real-world impact.</span></h1>
+      <p class="hero-desc">I'm Ifeoluwa — an experienced Reporting Analyst and Data Analyst with hands-on consulting experience delivering corporate dashboards, automating reporting pipelines, and turning complex datasets into clear, actionable insight for senior stakeholders. Every project here solves a real business problem and ends with a recommendation you can act on.</p>
+      <div class="btns">
+        <a href="#projects" class="btn-p">View My Work</a>
+        <a href="my cv.pdf" target="_blank" class="btn-g">Download CV ↗</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="n">1yr+</span><span class="l">Consulting experience</span></div>
+        <div class="stat"><span class="n">47M+</span><span class="l">Records analysed</span></div>
+        <div class="stat"><span class="n">6+</span><span class="l">Projects delivered</span></div>
+        <div class="stat"><span class="n">4</span><span class="l">Tools per pipeline</span></div>
+      </div>
+    </div>
+    <div class="id-card">
+      <img src="headshot.png" alt="Ifeoluwa Samuel Sunday" class="avatar-img"/>
+      <div class="avatar-name">Ifeoluwa Samuel Sunday</div>
+      <div class="avatar-title">Reporting Analyst · Data Analyst<br>TechDrive Consulting · UK</div>
+      <div class="exp-badge">📊 1yr+ Professional Experience</div>
+      <div class="avatar-links">
+        <a href="https://github.com/Techy-Sam1" target="_blank" class="av-icon" title="GitHub">🐙</a>
+        <a href="https://linkedin.com/in/ifeoluwa-samuel-sunday-a164bb32b" target="_blank" class="av-icon" title="LinkedIn">💼</a>
+        <a href="mailto:sundayifeoluwa05@gmail.com" class="av-icon" title="Email">✉️</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <p class="sec-eye">Professional Background</p>
+    <h2 class="sec-title">Work Experience</h2>
+    <p class="sec-desc">Over a year of hands-on experience in data consulting, reporting, and analytics — delivering real outcomes for corporate clients and internal stakeholders.</p>
+    <div class="exp-timeline">
+
+      <div class="exp-card current">
+        <div class="exp-top">
+          <div class="exp-icon">📊</div>
+          <div class="exp-meta">
+            <div class="exp-title">Reporting Analyst</div>
+            <div class="exp-company">TechDrive Consulting Limited</div>
+            <div class="exp-date">Jun 2025 – Present · Hybrid · Contract</div>
+          </div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Collaborated with corporate business stakeholders to gather KPI requirements and deliver interactive Power BI dashboards presenting operational data clearly to non-technical senior leaders</li>
+          <li>Automated client reporting processes — replacing manual Excel trackers with scheduled, automated pipelines improving accuracy, consistency, and efficiency across client operations</li>
+          <li>Built and maintained ETL pipelines using SQL and SSIS — extracting, transforming, and loading data from multiple business platforms into centralised repositories for clean, reliable reporting</li>
+          <li>Performed data cleansing and standardisation across internal and client datasets — ensuring all reports were precise and trustworthy before stakeholder delivery</li>
+          <li>Tracked and reported on cohort metrics, placement outcomes, and operational KPIs — supporting TechDrive's commercial and strategic decision-making</li>
+          <li>Served as technical point of contact and mentor for junior data analysts and career switchers — standardising Excel and SQL templates across delivery teams</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="etag">Power BI</span><span class="etag">SQL</span><span class="etag">Excel</span><span class="etag">ETL</span><span class="etag">SSIS</span><span class="etag">KPI Reporting</span><span class="etag">Data Cleansing</span><span class="etag">Stakeholder Management</span>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-top">
+          <div class="exp-icon">🏦</div>
+          <div class="exp-meta">
+            <div class="exp-title">Junior Analyst</div>
+            <div class="exp-company">Sunday Asaba Oil & Gas</div>
+            <div class="exp-date">Aug 2023 – Sep 2024 · On-site · Full-time</div>
+          </div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Maintained financial data accuracy at 98% precision across accounts payable, receivable, and payroll — demonstrating rigorous data quality and governance standards</li>
+          <li>Produced monthly management reports and variance analysis in Excel, translating complex financial data into clear summaries for senior non-technical decision-makers</li>
+          <li>Identified and investigated financial discrepancies applying structured root cause analysis and implementing corrective processes to maintain data integrity</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="etag">Excel</span><span class="etag">Financial Analysis</span><span class="etag">Variance Analysis</span><span class="etag">Data Quality</span><span class="etag">Management Reporting</span>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-top">
+          <div class="exp-icon">🔷</div>
+          <div class="exp-meta">
+            <div class="exp-title">Data Consultant (Virtual Experience)</div>
+            <div class="exp-company">Deloitte · Forage</div>
+            <div class="exp-date">Jan 2026 – Mar 2026 · Remote</div>
+          </div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Analysed factory telemetry data across 4 global facilities within a simulated Big Four consulting environment — built Tableau dashboard identifying operational failure patterns</li>
+          <li>Conducted structured data analysis and produced client-facing reports with clear, actionable recommendations for operational improvement</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="etag">Tableau</span><span class="etag">Excel</span><span class="etag">Data Analysis</span><span class="etag">Client Reporting</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section id="stack">
+  <div class="wrap">
+    <p class="sec-eye">Technical Toolkit</p>
+    <h2 class="sec-title">Skills & Technologies</h2>
+    <p class="sec-desc">End-to-end analytics capability — from raw data ingestion through transformation, modelling, and stakeholder-ready delivery.</p>
+    <div class="stack-grid">
+      <div class="stack-card"><span class="s-icon">📊</span><div><div class="s-name">Power BI</div><div class="s-sub">DAX · Data Modelling</div></div></div>
+      <div class="stack-card"><span class="s-icon">🗄️</span><div><div class="s-name">SQL</div><div class="s-sub">MySQL · SQL Server</div></div></div>
+      <div class="stack-card"><span class="s-icon">🐍</span><div><div class="s-name">Python</div><div class="s-sub">Pandas · NumPy · Seaborn</div></div></div>
+      <div class="stack-card"><span class="s-icon">📈</span><div><div class="s-name">Excel</div><div class="s-sub">Advanced · Power Query</div></div></div>
+      <div class="stack-card"><span class="s-icon">🔀</span><div><div class="s-name">ETL Pipelines</div><div class="s-sub">SSIS · Data Loading</div></div></div>
+      <div class="stack-card"><span class="s-icon">🧹</span><div><div class="s-name">Data Quality</div><div class="s-sub">Cleansing · Governance</div></div></div>
+      <div class="stack-card"><span class="s-icon">📐</span><div><div class="s-name">DAX</div><div class="s-sub">Measures · KPIs</div></div></div>
+      <div class="stack-card"><span class="s-icon">📋</span><div><div class="s-name">Tableau</div><div class="s-sub">Visualisation</div></div></div>
+      <div class="stack-card"><span class="s-icon">☁️</span><div><div class="s-name">Azure</div><div class="s-sub">Fundamentals (Developing)</div></div></div>
+      <div class="stack-card"><span class="s-icon">🔧</span><div><div class="s-name">Git / GitHub</div><div class="s-sub">Version Control</div></div></div>
+      <div class="stack-card"><span class="s-icon">📖</span><div><div class="s-name">Storytelling</div><div class="s-sub">Insight → Action</div></div></div>
+      <div class="stack-card"><span class="s-icon">🤝</span><div><div class="s-name">Stakeholder Mgmt</div><div class="s-sub">Reports · Presentations</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <p class="sec-eye">Portfolio</p>
+    <h2 class="sec-title">Analytics Projects</h2>
+    <p class="sec-desc">Six projects. Three industries. One rigorous pipeline. Each one built to solve a real business problem — from raw data to stakeholder-ready insight.</p>
+    <div class="proj-list">
+
+      <!-- 01 NHS FEATURED -->
+      <div class="proj-card featured">
+        <div class="feat-pill"><span class="feat-dot"></span>Flagship Project · Healthcare · Real Government Data</div>
+        <div class="proj-header">
+          <div class="proj-title">NHS England A&E Performance Analysis</div>
+          <a class="proj-gh" href="https://github.com/Techy-Sam1" target="_blank">GitHub ↗</a>
+        </div>
+        <div class="proj-sub">End-to-end · Excel → MySQL → Power BI · Official NHS England Statistics</div>
+
+        <div class="proj-img-grid">
+          <div class="proj-img-wrap">
+            <a href="NHS_DASHBOARD_1.png" target="_blank"><img src="NHS_DASHBOARD_1.png" alt="NHS A&E Dashboard - national overview"/></a>
+          </div>
+          <div class="proj-img-wrap">
+            <a href="NHS_DASHBOARD_2.png" target="_blank"><img src="NHS_DASHBOARD_2.png" alt="NHS A&E Dashboard - Trust rankings"/></a>
+          </div>
+        </div>
+
+        <div class="nhs-stat-strip">
+          <div class="nhs-stat"><span class="nv">58.2%</span><span class="nl">Avg 4hr performance</span></div>
+          <div class="nhs-stat"><span class="nv">0/124</span><span class="nl">Trusts hit 95% target</span></div>
+          <div class="nhs-stat"><span class="nv">19.7M</span><span class="nl">Patients failed</span></div>
+          <div class="nhs-stat"><span class="nv">41.6%</span><span class="nl">Of all A&E visits</span></div>
+        </div>
+
+        <p class="proj-desc">Analysed 3 years of official NHS England data across 124 Trusts and 47 million A&E patient visits to investigate NHS constitutional performance. Built a complete ETL pipeline — merging three annual government reports, standardising datasets, mapping all 124 Trusts to 7 NHS regions, writing 10 SQL queries, and delivering a 2-page interactive Power BI dashboard. The finding: not a single Trust out of 124 met the 95% target in any of the 3 years. 19.7 million patients waited longer than they constitutionally should have. My local Sunderland Trust performed at 55.07% — below the national average.</p>
+        <div class="proj-tags">
+          <span class="tag tc">Excel</span><span class="tag tc">MySQL</span><span class="tag tp">Power BI</span><span class="tag tp">DAX</span><span class="tag tnhs">NHS England Data</span><span class="tag tnhs">Healthcare Analytics</span><span class="tag tz">Open Government Data</span>
+        </div>
+        <div class="metrics">
+          <div class="metric nhs-m"><strong>124</strong> NHS Trusts</div>
+          <div class="metric nhs-m"><strong>47M</strong> patient visits</div>
+          <div class="metric nhs-m"><strong>3 years</strong> 2022–25</div>
+          <div class="metric nhs-m"><strong>10</strong> SQL queries</div>
+          <div class="metric nhs-m"><strong>7</strong> regions mapped</div>
+          <div class="metric nhs-m"><strong>2-page</strong> Power BI dashboard</div>
+        </div>
+      </div>
+
+      <!-- 02 CHURN -->
+      <div class="proj-card">
+        <div class="proj-header">
+          <div class="proj-title">Telco Customer Churn Analysis</div>
+          <a class="proj-gh" href="https://github.com/Techy-Sam1/CUSTOMER-CHURN-PROJECT" target="_blank">GitHub ↗</a>
+        </div>
+        <div class="proj-sub">End-to-end · Excel → MySQL → Python → Power BI</div>
+        <div class="proj-img-wrap">
+          <a href="churn_project.png" target="_blank"><img src="churn_project.png" alt="Customer Churn Power BI Dashboard"/></a>
+        </div>
+        <p class="proj-desc">Analysed 7,032 customer records to identify why a telecom company was losing 26.6% of customers annually — above the 18–25% industry average. Built a complete four-tool pipeline: cleaned in Excel, queried 11 business questions in MySQL, engineered a custom Python risk-scoring model flagging 31 high-risk customers, and delivered an interactive Power BI dashboard with strategies projected to recover $450K+ in recurring revenue.</p>
+        <div class="proj-tags">
+          <span class="tag tc">Excel</span><span class="tag tc">MySQL</span><span class="tag tg">Python</span><span class="tag tp">Power BI</span><span class="tag tp">DAX</span><span class="tag tz">Risk Scoring</span><span class="tag tz">Customer Analytics</span>
+        </div>
+        <div class="metrics">
+          <div class="metric"><strong>7,032</strong> customers analysed</div>
+          <div class="metric"><strong>26.6%</strong> churn rate</div>
+          <div class="metric"><strong>$2.86M</strong> revenue at risk</div>
+          <div class="metric"><strong>$450K+</strong> recoverable revenue</div>
+          <div class="metric"><strong>31</strong> high-risk customers flagged</div>
+        </div>
+      </div>
+
+      <!-- 03 LOAN -->
+      <div class="proj-card">
+        <div class="proj-header">
+          <div class="proj-title">Loan Default Prediction & Approval Analysis</div>
+          <a class="proj-gh" href="https://github.com/Techy-Sam1/LOAN-PREDICTION-PROJECT" target="_blank">GitHub ↗</a>
+        </div>
+        <div class="proj-sub">End-to-end · Excel → MySQL → Python → Power BI</div>
+        <div class="proj-img-wrap">
+          <a href="loan_project.png" target="_blank"><img src="loan_project.png" alt="Loan Default Prediction Dashboard"/></a>
+        </div>
+        <p class="proj-desc">Analysed 614 bank loan applications to help loan officers make evidence-based decisions. Engineered debt-to-income ratio and household income features, identified credit history as the strongest default predictor (80% vs 32% approval rate), and built a three-tier automated decision framework (Approve / Review / Reject). Delivered a dark-themed interactive Power BI risk dashboard — framework projected to save $750K+ annually by reducing loan defaults.</p>
+        <div class="proj-tags">
+          <span class="tag tc">Excel</span><span class="tag tc">MySQL</span><span class="tag tg">Python</span><span class="tag tp">Power BI</span><span class="tag tp">Power Query</span><span class="tag tz">Risk Analysis</span><span class="tag tz">Financial Analytics</span>
+        </div>
+        <div class="metrics">
+          <div class="metric"><strong>614</strong> applications analysed</div>
+          <div class="metric"><strong>$750K+</strong> savings identified</div>
+          <div class="metric"><strong>80% vs 32%</strong> approval differential</div>
+          <div class="metric">3-tier decision framework</div>
+        </div>
+      </div>
+
+      <!-- 04 SALES -->
+      <div class="proj-card">
+        <div class="proj-header">
+          <div class="proj-title">Sales Capstone & Data Storytelling</div>
+          <a class="proj-gh" href="https://github.com/Techy-Sam1/FIRST-CAPSTONE-PROJECT-AND-STRORY-TELLING" target="_blank">GitHub ↗</a>
+        </div>
+        <div class="proj-sub">Capstone · Excel · SQL · Python · Power BI · Data Storytelling</div>
+        <p class="proj-desc">Cleaned, analysed, and transformed raw sales data into executive-ready insight. Discovered that Classic Cars drove the most revenue, medium deal sizes accounted for 50% of total revenue, and the USA was the dominant market. Recommended targeted marketing strategy to recover from a 2005 sales dip — delivered through a structured Power BI dashboard with supporting narrative.</p>
+        <div class="proj-tags">
+          <span class="tag tc">Excel</span><span class="tag tc">SQLite</span><span class="tag tg">Python</span><span class="tag tp">Power BI</span><span class="tag tz">Storytelling</span><span class="tag tz">Sales Analytics</span>
+        </div>
+        <div class="metrics">
+          <div class="metric">50% revenue from medium deals</div>
+          <div class="metric">USA #1 market identified</div>
+          <div class="metric">Classic Cars top product line</div>
+        </div>
+      </div>
+
+      <!-- 05 MARKETING -->
+      <div class="proj-card">
+        <div class="proj-header">
+          <div class="proj-title">Marketing Campaign Analysis</div>
+          <a class="proj-gh" href="https://github.com/Techy-Sam1/MARKETING-ANALYSIS-PROJECT-SQL-PYTHON-" target="_blank">GitHub ↗</a>
+        </div>
+        <div class="proj-sub">SQL + Python · Campaign performance & customer segmentation</div>
+        <p class="proj-desc">Analysed marketing campaign performance using SQL and Python to identify which campaigns drove most acceptance, which customer segments responded best, and how income and spending behaviour influenced engagement. Created a TotalSpend feature and Responsive flag to segment customers and compare engagement across demographic groups.</p>
+        <div class="proj-tags">
+          <span class="tag tc">MySQL</span><span class="tag tg">Python</span><span class="tag tg">Pandas</span><span class="tag tg">Seaborn</span><span class="tag tz">Marketing Analytics</span><span class="tag tz">Segmentation</span>
+        </div>
+        <div class="metrics">
+          <div class="metric">5 campaigns evaluated</div>
+          <div class="metric">High-spend segments identified</div>
+          <div class="metric">Budget reallocation recommended</div>
+        </div>
+      </div>
+
+      <!-- 06 FIRST POWER BI -->
+      <div class="proj-card">
+        <div class="proj-header">
+          <div class="proj-title">Power BI Dashboard — Foundation Project</div>
+          <a class="proj-gh" href="https://github.com/Techy-Sam1/MY-FIRST-POWER-BI-DASHBOARD" target="_blank">GitHub ↗</a>
+        </div>
+        <div class="proj-sub">Foundation · Power BI · DAX · Data Modelling</div>
+        <p class="proj-desc">The starting point of my analytics journey — built my first interactive Power BI dashboard from scratch, establishing the foundation of DAX measures, data modelling, and visual design principles that now underpin every project in this portfolio.</p>
+        <div class="proj-tags">
+          <span class="tag tp">Power BI</span><span class="tag tp">DAX</span><span class="tag tz">Data Modelling</span><span class="tag tz">Visualisation</span>
+        </div>
+        <div class="metrics">
+          <div class="metric">Foundation of my pipeline</div>
+          <div class="metric">First DAX measures built</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-card">
+        <img src="headshot.png" alt="Ifeoluwa Samuel Sunday" class="about-photo"/>
+        <div class="about-name">Ifeoluwa Samuel Sunday</div>
+        <div class="about-role">Reporting Analyst · Data Analyst<br>Sunderland, UK · Open to relocation</div>
+        <div class="about-divider"></div>
+        <div class="social-row">
+          <a href="https://github.com/Techy-Sam1" class="soc-link" target="_blank"><span>🐙</span><span>github.com/Techy-Sam1</span></a>
+          <a href="https://www.linkedin.com/in/ifeoluwa-samuel-sunday-a164bb32b" class="soc-link" target="_blank"><span>💼</span><span>LinkedIn Profile</span></a>
+          <a href="mailto:sundayifeoluwa05@gmail.com" class="soc-link"><span>✉️</span><span>sundayifeoluwa05@gmail.com</span></a>
+          <a href="my cv.pdf" class="soc-link" target="_blank"><span>📄</span><span>Download CV</span></a>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="sec-eye">About Me</p>
+        <h3>Experienced. Analytical.<br>Impact-driven.</h3>
+        <p>I'm an experienced Reporting Analyst currently working at TechDrive Consulting Limited, where I deliver corporate client dashboards, automate reporting pipelines, manage ETL data flows, and translate complex datasets into clear insight for senior non-technical stakeholders.</p>
+        <p>Before that, I worked as a Junior Analyst at Sunday Asaba Oil & Gas — maintaining 98% financial data accuracy, producing monthly variance analysis, and investigating data discrepancies using structured root cause analysis.</p>
+        <p>My flagship project — an NHS England A&E performance analysis across 124 Trusts and 47 million patient visits using official government data — uncovered that not a single Trust met the 95% constitutional standard in three years. That's the kind of insight that only emerges when data is interrogated properly. And that's exactly what I do.</p>
+        <div class="skills-wrap">
+          <span class="skill-tag">Power BI</span><span class="skill-tag">SQL</span><span class="skill-tag">Python</span><span class="skill-tag">Excel</span><span class="skill-tag">ETL / SSIS</span><span class="skill-tag">DAX</span><span class="skill-tag">Tableau</span><span class="skill-tag">Data Cleansing</span><span class="skill-tag">KPI Reporting</span><span class="skill-tag">Feature Engineering</span><span class="skill-tag">EDA</span><span class="skill-tag">Data Storytelling</span><span class="skill-tag">Risk Analysis</span><span class="skill-tag">Healthcare Analytics</span><span class="skill-tag">Azure (Developing)</span><span class="skill-tag">Git / GitHub</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <p class="sec-eye">Get In Touch</p>
+    <h2 class="sec-title">Let's work together</h2>
+    <p class="sec-desc">Open to data analyst, reporting analyst, and BI analyst roles across the UK. Let's talk.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Reach out directly</h3>
+        <p>Whether you're hiring, want to discuss a project, or just want to connect — I'd love to hear from you. I'm open to relocation and hybrid working across the UK.</p>
+        <div class="c-links">
+          <a href="mailto:sundayifeoluwa05@gmail.com" class="c-link"><div class="c-icon">✉️</div> sundayifeoluwa05@gmail.com</a>
+          <a href="tel:07464979652" class="c-link"><div class="c-icon">📱</div> 07464 979 652</a>
+          <a href="https://github.com/Techy-Sam1" class="c-link" target="_blank"><div class="c-icon">🐙</div> github.com/Techy-Sam1</a>
+          <a href="https://www.linkedin.com/in/ifeoluwa-samuel-sunday-a164bb32b" class="c-link" target="_blank"><div class="c-icon">💼</div> LinkedIn</a>
+        </div>
+      </div>
+      <form class="form" onsubmit="handleForm(event)">
+        <div class="fg"><label>Name</label><input type="text" placeholder="Your name" required/></div>
+        <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com" required/></div>
+        <div class="fg"><label>Message</label><textarea placeholder="Tell me about the role or project..." required></textarea></div>
+        <button type="submit" class="form-btn">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Ifeoluwa Samuel Sunday &nbsp;·&nbsp; Reporting Analyst & Data Analyst &nbsp;·&nbsp; Built with HTML · Hosted on GitHub Pages &nbsp;·&nbsp; <a href="https://github.com/Techy-Sam1" target="_blank">github.com/Techy-Sam1</a></p>
+</footer>
+
+<script>
+function handleForm(e){
+  e.preventDefault();
+  alert('To make this form send real emails, sign up free at formspree.io — it takes 5 minutes and just needs one line changed in the HTML.');
+}
+</script>
+</body>
+</html>
